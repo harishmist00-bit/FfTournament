@@ -54,7 +54,28 @@ export function TournamentRegisterModal({
 
           <input
             type="text"
-            placeholder="Captain Name"
+            placeholder="Player 1 UID"
+            required
+            className="w-full border border-neon/20 bg-deep px-4 py-3 text-sm text-white outline-none placeholder:text-dim focus:border-neon"
+          />
+
+          <input
+            type="text"
+            placeholder="Player 2 UID"
+            required
+            className="w-full border border-neon/20 bg-deep px-4 py-3 text-sm text-white outline-none placeholder:text-dim focus:border-neon"
+          />
+
+          <input
+            type="text"
+            placeholder="Player 3 UID"
+            required
+            className="w-full border border-neon/20 bg-deep px-4 py-3 text-sm text-white outline-none placeholder:text-dim focus:border-neon"
+          />
+
+          <input
+            type="text"
+            placeholder="Player 4 UID"
             required
             className="w-full border border-neon/20 bg-deep px-4 py-3 text-sm text-white outline-none placeholder:text-dim focus:border-neon"
           />
