@@ -21,6 +21,9 @@ export function TournamentRegisterModal({
   const [players, setPlayers] = useState(['', '', '', '']);
   const [captain, setCaptain] = useState<number | null>(null);
 
+  const [primaryMobile, setPrimaryMobile] = useState('');
+  const [alternateMobile, setAlternateMobile] = useState('');
+
   const inputClass =
     'w-full border border-neon/20 bg-deep px-4 py-3 text-sm text-white outline-none placeholder:text-dim focus:border-neon';
 
@@ -212,6 +215,48 @@ export function TournamentRegisterModal({
                   : `Captain: Player ${captain + 1}`}
               </p>
             </div>
+
+            
+              {/* Mobile Numbers */}
+              <div className="space-y-4">
+                <div>
+                  <label className="mb-2 block text-xs font-bold uppercase text-dim">
+                    Primary Mobile Number
+                  </label>
+                  <input
+                    type="tel"
+                    placeholder="Enter primary mobile number"
+                    value={primaryMobile}
+                    onChange={(e) =>
+                      setPrimaryMobile(
+                        e.target.value.replace(/\D/g, '').slice(0, 10)
+                      )
+                    }
+                    pattern="[6-9][0-9]{9}"
+                    required
+                    className={inputClass}
+                  />
+                </div>
+
+                <div>
+                  <label className="mb-2 block text-xs font-bold uppercase text-dim">
+                    Alternate Mobile Number (Optional)
+                  </label>
+                  <input
+                    type="tel"
+                    placeholder="Enter alternate mobile number"
+                    value={alternateMobile}
+                    onChange={(e) =>
+                      setAlternateMobile(
+                        e.target.value.replace(/\D/g, '').slice(0, 10)
+                      )
+                    }
+                    pattern="[6-9][0-9]{9}"
+                    className={inputClass}
+                  />
+                </div>
+              </div>
+
 
             <button
               type="submit"
